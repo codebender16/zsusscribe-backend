@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_07_20_045407) do
+ActiveRecord::Schema.define(version: 2020_07_20_063842) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -22,11 +22,11 @@ ActiveRecord::Schema.define(version: 2020_07_20_045407) do
   end
 
   create_table "custom_categories", force: :cascade do |t|
-    t.bigint "categories_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.bigint "user_id", null: false
-    t.index ["categories_id"], name: "index_custom_categories_on_categories_id"
+    t.bigint "category_id", null: false
+    t.index ["category_id"], name: "index_custom_categories_on_category_id"
     t.index ["user_id"], name: "index_custom_categories_on_user_id"
   end
 
@@ -46,9 +46,9 @@ ActiveRecord::Schema.define(version: 2020_07_20_045407) do
     t.datetime "expiry_date"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.bigint "categories_id", null: false
     t.bigint "user_id", null: false
-    t.index ["categories_id"], name: "index_subscriptions_on_categories_id"
+    t.bigint "category_id", null: false
+    t.index ["category_id"], name: "index_subscriptions_on_category_id"
     t.index ["user_id"], name: "index_subscriptions_on_user_id"
   end
 
@@ -64,9 +64,9 @@ ActiveRecord::Schema.define(version: 2020_07_20_045407) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  add_foreign_key "custom_categories", "categories", column: "categories_id"
+  add_foreign_key "custom_categories", "categories"
   add_foreign_key "custom_categories", "users"
   add_foreign_key "friendlists", "users"
-  add_foreign_key "subscriptions", "categories", column: "categories_id"
+  add_foreign_key "subscriptions", "categories"
   add_foreign_key "subscriptions", "users"
 end
