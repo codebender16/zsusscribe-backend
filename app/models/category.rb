@@ -1,3 +1,4 @@
 class Category < ApplicationRecord
-    has_many :subscriptions
+    has_many :customcategories
+    has_many :subscriptions, through: :customcategories
 end
