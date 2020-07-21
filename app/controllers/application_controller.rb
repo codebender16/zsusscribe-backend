@@ -9,11 +9,9 @@ class ApplicationController < ActionController::API
     options ||= {}
     # if the user is logged in and we're returning a json object,
     # send a new JWT with it
-    if json_response?(options) && logged_in?
-      options[:json].merge!({ jwt: new_jwt })
-    end
+    options[:json].merge!({ jwt: new_jwt }) if json_response?(options) && logged_in?
     # if the user isn't logged in behave like the standard render
-    super(options, extra_options, &block)
+    super(options, extra_options, & block)
   end
 
   private
