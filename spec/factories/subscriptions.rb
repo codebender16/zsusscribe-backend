@@ -4,7 +4,7 @@ FactoryBot.define do
       "Factory Test Trail no.#{n}" 
     end
     name {'Netflix'}
-    payment_amount {20}
+    payment_amount {13.99}
     payment_date {'20/07/20'}
     reminder {'14 days'}
     expiry_date {'22/08/20'}
