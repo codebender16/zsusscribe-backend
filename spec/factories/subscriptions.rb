@@ -11,8 +11,5 @@ FactoryBot.define do
 
     association :user
 
-    trait :invalid do
-      name {nil}
-    end
   end
 end
