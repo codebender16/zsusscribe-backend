@@ -1,6 +1,32 @@
-example_id                        | status | run_time        |
---------------------------------- | ------ | --------------- |
-./spec/models/user_spec.rb[1:1:1] | passed | 0.00981 seconds |
-./spec/models/user_spec.rb[1:1:2] | passed | 0.01001 seconds |
-./spec/models/user_spec.rb[1:1:3] | passed | 0.00723 seconds |
-./spec/models/user_spec.rb[1:2:1] | passed | 0.0489 seconds  |
+example_id                                             | status | run_time        |
+------------------------------------------------------ | ------ | --------------- |
+./spec/models/custom_category_spec.rb[1:1:1]           | passed | 0.03879 seconds |
+./spec/models/custom_category_spec.rb[1:2:1]           | passed | 0.05377 seconds |
+./spec/models/custom_category_spec.rb[1:2:2]           | failed | 0.02484 seconds |
+./spec/models/subscription_spec.rb[1:1:1]              | failed | 0.00691 seconds |
+./spec/models/subscription_spec.rb[1:1:2]              | failed | 0.0042 seconds  |
+./spec/models/subscription_spec.rb[1:1:3]              | failed | 0.00419 seconds |
+./spec/models/subscription_spec.rb[1:1:4]              | failed | 0.00508 seconds |
+./spec/models/subscription_spec.rb[1:1:5]              | failed | 0.006 seconds   |
+./spec/models/subscription_spec.rb[1:2:1]              | failed | 0.00502 seconds |
+./spec/models/subscription_spec.rb[1:2:2]              | failed | 0.05384 seconds |
+./spec/models/user_spec.rb[1:1:1]                      | passed | 0.02772 seconds |
+./spec/models/user_spec.rb[1:1:2]                      | passed | 0.01657 seconds |
+./spec/models/user_spec.rb[1:1:3]                      | passed | 0.01527 seconds |
+./spec/models/user_spec.rb[1:1:4]                      | passed | 0.00742 seconds |
+./spec/models/user_spec.rb[1:2:1]                      | passed | 0.06153 seconds |
+./spec/models/user_spec.rb[1:2:2]                      | passed | 0.02106 seconds |
+./spec/requests/subscriptions_request_spec.rb[1:1:1]   | failed | 0.00682 seconds |
+./spec/requests/subscriptions_request_spec.rb[1:1:2]   | failed | 0.0025 seconds  |
+./spec/requests/subscriptions_request_spec.rb[1:1:3]   | failed | 0.00274 seconds |
+./spec/requests/subscriptions_request_spec.rb[1:2:1:1] | failed | 0.00822 seconds |
+./spec/requests/subscriptions_request_spec.rb[1:2:1:2] | failed | 0.00328 seconds |
+./spec/requests/subscriptions_request_spec.rb[1:2:2:1] | failed | 0.00223 seconds |
+./spec/requests/subscriptions_request_spec.rb[1:2:2:2] | failed | 0.00686 seconds |
+./spec/requests/subscriptions_request_spec.rb[1:2:2:3] | failed | 0.00448 seconds |
+./spec/requests/subscriptions_request_spec.rb[1:3:1:1] | failed | 0.00197 seconds |
+./spec/requests/subscriptions_request_spec.rb[1:3:1:2] | failed | 0.00195 seconds |
+./spec/requests/subscriptions_request_spec.rb[1:3:2:1] | failed | 0.00264 seconds |
+./spec/requests/subscriptions_request_spec.rb[1:3:2:2] | failed | 0.00372 seconds |
+./spec/requests/subscriptions_request_spec.rb[1:4:1]   | failed | 0.00384 seconds |
+./spec/requests/subscriptions_request_spec.rb[1:4:2]   | failed | 0.00494 seconds |
