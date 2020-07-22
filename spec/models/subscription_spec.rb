@@ -3,6 +3,7 @@ require 'rails_helper'
 RSpec.describe Subscription, type: :model do
   subject { build(:subscription) }
   
+
   context 'validations' do
     it 'has a valid factory' do
       expect(build(:subscription)).to be_valid
@@ -16,7 +17,7 @@ RSpec.describe Subscription, type: :model do
   end
   
   context 'associations' do
-    it { expect(subject).to have_many(:subscriptions).through(:custom_categories) } 
+    it { expect(subject).to have_one(:category) } 
     it { expect(subject).to belong_to(:user) }
   end
 

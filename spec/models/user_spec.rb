@@ -9,11 +9,12 @@ RSpec.describe User, type: :model do
     end
 
     it { expect(subject).to validate_presence_of(:email) }
-    # it { expect(subject).to validate_uniqueness_of(:email) }
+    it { expect(subject).to validate_uniqueness_of(:email) }
     it { expect(subject).to have_secure_password }
   end
 
   context 'associations' do
     it { expect(subject).to have_many(:subscriptions) }
+    it { expect(subject).to have_many(:categories).through(:custom_categories)}
   end
 end
