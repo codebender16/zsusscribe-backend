@@ -1,9 +1,4 @@
 class SubscriptionsController < ApplicationController
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 3bb1df78b3807b9b8374008192884bc5d77e68c1
   before_action :authenticate_user
   before_action :set_subscription, only: %i[show update destroy] # add update_image when we get to avatar
 
@@ -63,8 +58,4 @@ class SubscriptionsController < ApplicationController
   # end
 
 
-<<<<<<< HEAD
->>>>>>> 8394d020bb6dd3139be5e687d3dc83aa6f810688
-=======
->>>>>>> 3bb1df78b3807b9b8374008192884bc5d77e68c1
 end

@@ -1,10 +1,3 @@
-<<<<<<< HEAD
-User.create(email: "J@gmail.com", password: "password", first_name: "James", last_name: "Ma", mobile: "123456")
-User.create(email: "K@gmail.com", password: "password", first_name: "Kuan", last_name: "Lee", mobile: "654321")
-Category.create(name: "music")
-Subscription.create(name: "Netflix", payment_amount: 6, reminder: "time to go", user_id: 1, category_id: 1)
-Subscription.create(name: "Spotify", payment_amount: 12, reminder: "right now", user_id: 2, category_id: 1)
-=======
 # User sample data
 User.destroy_all
 puts 'destorying users'
@@ -39,5 +32,3 @@ services = ['Netflix', 'Spotify', 'Cosic', 'Steezy', 'MyFitnessPal', 'Audible', 
     category_id: rand(1..5)
   )
 end
-
->>>>>>> 3bb1df78b3807b9b8374008192884bc5d77e68c1

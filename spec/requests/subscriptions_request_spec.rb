@@ -1,13 +1,6 @@
 require 'rails_helper'
 
 RSpec.describe "Subscriptions", type: :request do
-<<<<<<< HEAD
-<<<<<<< HEAD
-
-end
-=======
-=======
->>>>>>> 3bb1df78b3807b9b8374008192884bc5d77e68c1
   describe 'GET #index' do
     before(:example) do
       # Arrange
@@ -121,9 +114,4 @@ end
       expect(Trail.count).to eq(0)
     end
   end
-<<<<<<< HEAD
 end
->>>>>>> 8394d020bb6dd3139be5e687d3dc83aa6f810688
-=======
-end
->>>>>>> 3bb1df78b3807b9b8374008192884bc5d77e68c1
