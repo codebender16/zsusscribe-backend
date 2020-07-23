@@ -41,13 +41,13 @@ ActiveRecord::Schema.define(version: 2020_07_20_063842) do
   create_table "subscriptions", force: :cascade do |t|
     t.string "name"
     t.integer "payment_amount"
-    t.datetime "payment_date"
+    t.date "payment_date"
     t.string "reminder"
-    t.datetime "expiry_date"
+    t.date "expiry_date"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.bigint "user_id", null: false
-    t.bigint "category_id", null: false
+    t.bigint "category_id"
     t.index ["category_id"], name: "index_subscriptions_on_category_id"
     t.index ["user_id"], name: "index_subscriptions_on_user_id"
   end

@@ -1,4 +1,4 @@
 class Category < ApplicationRecord
-  has_many :customcategories
-  has_many :subscriptions, through: :customcategories
+  has_many :custom_categories
+  # belongs_to :user, through: :custom_categories
 end
