@@ -4,7 +4,17 @@ class SubscriptionsController < ApplicationController
 
   def index
     subscriptions = current_user.subscriptions # chain method with this .with_attached_image when we get to image
-    render json: { subscriptions: subscriptions, current_user: current_user.email }
+    subscriptions_category = subscriptions.map do |subscription|
+      subscription_hash = subscription.attributes
+      subscription_hash[:category] = subscription.category.name
+      subscription_hash
+      # subscription.category.name
+    end
+    
+    render json: { 
+      subscriptions: subscriptions_category,
+      current_user: current_user.email
+      }
     # generate_image_urls(bookmarks)
   end
 
@@ -30,12 +40,6 @@ class SubscriptionsController < ApplicationController
     @subscription.destroy
     render json: 'subscription deleted', status: :ok
   end
-
-  # def update_image
-  #   @subscription.image.purge
-  #   @subscription.image.attach(subscription_params[:image])
-  #   render json: url_for(@subscription.image)
-  # end
 
   private
 
