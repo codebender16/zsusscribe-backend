@@ -14,6 +14,12 @@ class SubscriptionsController < ApplicationController
 
   def create
     subscription = current_user.subscriptions.create(subscription_params)
+    category = Category.find_by(name: params[:category_name])
+    if category 
+      subscription.category_id = category.id
+    else 
+      subscription.category_id = Category.create(name: params[:category_name]).id
+    end
     # if subscription_params[:image]
     render json: { subscription: subscription }, status: :created
     # else
@@ -40,7 +46,7 @@ class SubscriptionsController < ApplicationController
   private
 
   def subscription_params
-    params.require(:subscription).permit(:name, :payment_amount, :payment_date, :category_id) # :image 
+    params.require(:subscription).permit(:name, :payment_amount, :payment_date) # :image 
   end
 
   def set_subscription
