@@ -32,4 +32,3 @@ services = ['Netflix', 'Spotify', 'Cosic', 'Steezy', 'MyFitnessPal', 'Audible', 
     category_id: rand(1..5)
   )
 end
-
