@@ -44,7 +44,7 @@ class SubscriptionsController < ApplicationController
   private
 
   def subscription_params
-    params.require(:subscription).permit(:name, :payment_amount, :payment_date, :category_id) # :image 
+    params.require(:subscription).permit(:name, :payment_amount, :payment_date) # :image 
   end
 
   def set_subscription
