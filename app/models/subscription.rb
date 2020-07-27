@@ -4,5 +4,5 @@ class Subscription < ApplicationRecord
   validates :name, length: { minimum: 1, maximum: 20 }
   validates :payment_amount, presence: true 
   validates :payment_date, presence: true 
-  has_one :category
+  belongs_to :category
 end
