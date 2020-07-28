@@ -1,4 +1,5 @@
 class Subscription < ApplicationRecord
+  attr_accessor :category_name
   belongs_to :user
   validates :name, presence: true 
   validates :name, length: { minimum: 1, maximum: 20 }
