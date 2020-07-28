@@ -24,13 +24,21 @@ class SubscriptionsController < ApplicationController
 
   def create
     subscription = current_user.subscriptions.create(subscription_params)
-    category = Category.find_by(name: params[:category_name])
+    category = Category.find_by(name: params[:subscription][:category_name])
     if category 
       subscription.category_id = category.id
     else 
-      subscription.category_id = Category.create(name: params[:category_name]).id
+      subscription.category_id = Category.create(name: params[:subscription][:category_name]).id
     end
-    render json: { subscription: subscription }, status: :created
+    # if subscription_params[:image]
+    if subscription.save
+      subscription_hash = subscription.attributes
+      subscription_hash[:category] = Category.find(subscription.category_id).name
+      render json: { subscription: subscription_hash }, status: :created
+    end
+    # else
+      # render json: { bookmark: bookmark, image: '' }, status: :created
+    # end
   end
 
   def update
